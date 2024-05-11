@@ -16,13 +16,13 @@ public class UserService {
     );
     private final Map<String, Long> sessions = new HashMap<>();
 
-    public String login(String username) {
-        if (userPasswords.containsKey(username)) {
+    public String login(String username, String password) {
+        if (userPasswords.containsKey(username) && userPasswords.get(username).equals(password)) {
             long sessionToken = new Random().nextLong();
             sessions.put(username, sessionToken);
             return String.valueOf(sessionToken);
         }
-        return "Invalid username";
+        return "Invalid username or password";
     }
 
     public boolean validateToken(String token) {

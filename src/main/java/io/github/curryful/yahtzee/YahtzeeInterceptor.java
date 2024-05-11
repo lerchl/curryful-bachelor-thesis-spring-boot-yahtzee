@@ -10,7 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class YahtzeeInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+            throws Exception {
         if (request.getRequestURI().equals("/yahtzee")) {
             String sessionToken = request.getHeader("Authorization");
             if (sessionToken != null && sessionToken.equals("bobSessionToken")) {

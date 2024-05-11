@@ -3,7 +3,9 @@
 
     I want a yahtzee application built with Spring Boot using in-memory storage
     using Java Collections. There are only two endpoints:
-    - POST /login - takes a username and returns a session password
+
+    - POST /login - takes a username and password as query parameters and
+            returns a session password
     - GET /yahtzee - generates five random dice rolls and returns the result
             (Always return a small straight for charlie)
 
